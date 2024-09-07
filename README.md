@@ -18,4 +18,6 @@ and `pageNumber` is an integer representing the page number of the scraped searc
 For example:
 ``search("Witcher", 1).then(({ results, currentPage, lastPage }) => {
     console.log(`Search results (page ${currentPage} of ${lastPage}):`, results);
-});`` would return 10 objects (because FitGirl's search page only includes 10 results per page) and get the index of the last page, saving it as `lastPage`, and the currently selected page as `currentPage`.
+}).catch(error => {
+    console.error('Search failed:', error);
+});`` would return 10 objects (because FitGirl's search page only includes 10 results per page) and get the index of the last page, saving it as `lastPage`, and the currently selected page as `currentPage`. In the callback, `results[3]` would get the object data of the fourth Title result. Furthermore, you could also do `results[3].imageurl` or `results[3].title` or `results[3].url` to get the corresponding values individually.
