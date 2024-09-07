@@ -81,8 +81,11 @@ async function search(query, page = 1) {
 }
 
 // Example usage of the API with pagination and last page detection:
+/**
 search("Witcher", 1).then(({ results, currentPage, lastPage }) => {
     console.log(`Search results (page ${currentPage} of ${lastPage}):`, results);
+    window.results = results;
 }).catch(error => {
     console.error('Search failed:', error);
 });
+**/
