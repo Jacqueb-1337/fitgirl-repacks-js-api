@@ -21,3 +21,5 @@ For example:
 }).catch(error => {
     console.error('Search failed:', error);
 });`` would return 10 objects (because FitGirl's search page only includes 10 results per page) and get the index of the last page, saving it as `lastPage`, and the currently selected page as `currentPage`. In the callback, `results[3]` would get the object data of the fourth Title result. Furthermore, you could also do `results[3].imageurl` or `results[3].title` or `results[3].url` to get the corresponding values individually.
+
+Following the example code at the end of api.js, if you did ``search("Witcher", 1).then(({ results, currentPage, lastPage }) => {window.results = results; }).catch(error => { window.results = "Search failed:" + error); });``, you could set the results to a global variable, so you can later call `results[3]`, `results[2].imageurl`, etc.
