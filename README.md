@@ -1,7 +1,8 @@
 # fitgirl-repacks-js-api
 A JavaScript API to search titles in the official FitGirl Repacks site.
 
-Obviously, you won't be able to use this on your website unless you have some way to disable CORS. This is actually intended for web-based apps such as Electron.js or NW.js.
+Obviously, you won't be able to use this on your website unless you have some way to disable CORS. This is actually intended for web-based apps such as Electron.js or NW.js.\
+*Edit: I have added a fallback to a CORS proxy to bypass this, so you can in fact use the API on your website. I will soon add an arg for you to specify a custom proxy, but for now it uses whateverorigin.org. At present, whateverorigin is having some issues with their web app, so the API uses up to 10 refresh attempts and will fail after the 10th attempt, throwing an error.* 
 
 It allows for custom callbacks, and will (in a future update very soon) handle outages such as when FitGirl's site is being DDoSed.
 
